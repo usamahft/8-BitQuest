@@ -35,6 +35,8 @@ if (isProductionDeploy && placeholderHosts.has(hostname)) {
 // https://astro.build/config
 export default defineConfig({
   site,
+  output: "hybrid", // cf pages
+  adapter: cloudflare(),
 
   // The site is static EXCEPT one page: `/contact/` sets `export const prerender = false` because
   // it receives the Resend form POST and re-renders itself with the result.
